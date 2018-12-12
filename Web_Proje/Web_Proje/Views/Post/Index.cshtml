@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Web_Proje.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Yeni Haber Oluştur", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PostHead)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostSubHead)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostContent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Img)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.PostHead)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostSubHead)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostContent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Img)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PostID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PostID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PostID })
+        </td>
+    </tr>
+}
+
+</table>
