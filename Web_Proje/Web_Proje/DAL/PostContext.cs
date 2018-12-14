@@ -10,11 +10,11 @@ namespace Web_Proje.DAL
 {
     public class PostContext : DbContext
     {
-        public PostContext() : base("aspnet-Web_Proje-20181211062336")
+        public PostContext() : base("aspnet-Web_Proje-20181213093655")
         {
 
         }
-        public DbSet<Post> Posts { get; set; }
+        public DbSet<Post> Post { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h3>Haberler</h3>
 
 <p>
     @Html.ActionLink("Yeni Haber Oluştur", "Create")
@@ -18,6 +18,9 @@
             @Html.DisplayNameFor(model => model.PostSubHead)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.PostCategory)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.PostContent)
         </th>
         <th>
@@ -28,12 +31,14 @@
 
 @foreach (var item in Model) {
     <tr>
-        
         <td>
             @Html.DisplayFor(modelItem => item.PostHead)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PostSubHead)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostCategory)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PostContent)
@@ -42,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.Img)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PostID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PostID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PostID })
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.PostID }) |
+            @Html.ActionLink("Ayrıntılar", "Details", new { id=item.PostID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.PostID })
         </td>
     </tr>
 }

@@ -8,6 +8,7 @@ namespace Web_Proje.Models
 
     public partial class AspNetUsers
     {
+        [Display(Name = "Kullanýcý ID")]
         public string Id { get; set; }
 
         [StringLength(256)]
@@ -36,9 +37,5 @@ namespace Web_Proje.Models
         [StringLength(256)]
         [Display(Name = "Kullanýcý Adý")]
         public string UserName { get; set; }
-
-        [StringLength(256)]
-        [Display(Name = "Kullanýcý Rolü")]
-        public string UserRole { get; set; }
     }
 }

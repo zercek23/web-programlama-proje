@@ -13,7 +13,7 @@ namespace Web_Proje.Models
         }
 
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
-
+        public virtual DbSet<AspNetUserRoles> AspNetUserRoles { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
         }

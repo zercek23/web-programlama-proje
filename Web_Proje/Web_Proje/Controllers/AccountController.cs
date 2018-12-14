@@ -449,7 +449,7 @@ namespace Web_Proje.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Post");
+            return RedirectToAction("Index", "Home");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

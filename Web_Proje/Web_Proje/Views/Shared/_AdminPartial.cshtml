@@ -5,10 +5,11 @@
     {
         @Html.AntiForgeryToken()
         
-        <div class="container" style="text-align:center;">
-            <a style="padding-right:50px;" href="#">Haberleri Listele</a>
-            <a href="#">Üyeleri Listele</a>
-        </div>
+<div class="container" style="text-align:center;">
+    @Html.ActionLink("Haberleri Listele", "Index", "Post") ||
+    @Html.ActionLink("Üyeleri Listele", "Index", "User") ||
+    @Html.ActionLink("Rolleri Listele", "Index", "UserRole")
+</div>
     }
 }
 else

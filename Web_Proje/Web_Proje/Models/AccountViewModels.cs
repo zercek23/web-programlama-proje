@@ -54,10 +54,10 @@ namespace Web_Proje.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Şifre")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Beni Hatırla")]
+        [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
     }
 
@@ -65,7 +65,7 @@ namespace Web_Proje.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "E-posta")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Required]
@@ -75,11 +75,11 @@ namespace Web_Proje.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Şifre")]
+        [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Şifreyi Doğrula")]
+        [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }

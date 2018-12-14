@@ -1,0 +1,45 @@
+﻿@model Web_Proje.Models.Post
+
+@{
+    ViewBag.Title = "Haberler";
+}
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="img-responsive">
+                    <img src="~/img/@Html.DisplayFor(model => model.Img)" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- section -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- Post content -->
+            <div class="col-md-8">
+                <div class="section-row sticky-container">
+                    <div class="main-post">
+                        <div class="post-meta">
+                            <a class="post-category">@Html.DisplayFor(model => model.PostCategory)</a>
+                            <span class="post-date">March 27, 2018</span>
+                        </div>
+                        <h3>@Html.DisplayFor(model => model.PostHead)</h3>
+                        <p>@Html.DisplayFor(model => model.PostContent)</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /aside -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /section -->
