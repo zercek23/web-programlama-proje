@@ -45,5 +45,21 @@ namespace Web_Proje.Controllers
             }
             return View(Posts);
         }
+        public ActionResult Spor()
+        {
+            return View(db.Post.ToList());
+        }
+        public ActionResult Ekonomi()
+        {
+            return View(db.Post.ToList());
+        }
+        public ActionResult Siyaset()
+        {
+            return View(db.Post.ToList());
+        }
+        public ActionResult Magazin()
+        {
+            return View(db.Post.ToList());
+        }
     }
 }

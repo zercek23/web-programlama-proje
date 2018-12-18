@@ -206,6 +206,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetUserRoles.cs" />
     <Compile Include="Models\AspNetUsers.cs" />
@@ -300,6 +301,10 @@
     <Content Include="Views\UserRole\Edit.cshtml" />
     <Content Include="Views\UserRole\Index.cshtml" />
     <Content Include="Views\Home\Haberler.cshtml" />
+    <Content Include="Views\Home\Spor.cshtml" />
+    <Content Include="Views\Home\Ekonomi.cshtml" />
+    <Content Include="Views\Home\Siyaset.cshtml" />
+    <Content Include="Views\Home\Magazin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

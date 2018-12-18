@@ -52,7 +52,7 @@ namespace Web_Proje.Controllers
         [Authorize(Roles = "Admin,Editor")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PostID,PostHead,PostSubHead,PostCategory,PostContent,Img")] Post post,HttpPostedFileBase img)
+        public ActionResult Create([Bind(Include = "PostID,PostHead,PostSubHead,PostCategory,PostContent,Img")] Post post, HttpPostedFileBase img)
         {
             string image = img.FileName;
             post.Img = image;
@@ -64,7 +64,6 @@ namespace Web_Proje.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(post);
         }
 

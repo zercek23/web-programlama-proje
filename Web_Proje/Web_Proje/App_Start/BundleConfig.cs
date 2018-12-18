@@ -21,7 +21,8 @@ namespace Web_Proje
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/main.js"));
+                      "~/Scripts/main.js",
+                      "~/Scripts/Slider.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
