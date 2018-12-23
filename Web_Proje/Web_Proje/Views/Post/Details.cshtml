@@ -1,13 +1,9 @@
 ﻿@model Web_Proje.Models.Post
 
-@{
-    ViewBag.Title = "Details";
-}
-
-<h2>Ayrıntılar</h2>
+<h2>@dil.Post.Ayrintilar</h2>
 
 <div>
-    <h4>Haber</h4>
+    <h4>@dil.Post.Haber</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -43,16 +39,26 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.PostDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostDate)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Img)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Img)
+            <a class="post-img">
+                <img width="300px" height="300px" src="~/img/@Html.DisplayFor(model => model.Img)" />
+            </a>
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Düzenle", "Edit", new { id = Model.PostID }) |
-    @Html.ActionLink("Listeye Geri Dön", "Index")
+    @Html.ActionLink(dil.Post.Duzenle, "Edit", new { id = Model.PostID }) |
+    @Html.ActionLink(dil.Post.Lgd, "Index")
 </p>

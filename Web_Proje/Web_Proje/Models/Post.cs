@@ -24,5 +24,7 @@ namespace Web_Proje.Models
         [Display(Name = "Haber Fotoğrafı")]
         [DataType(DataType.ImageUrl)]
         public string Img { get; set; }
+        [Display(Name = "Haber Tarihi")]
+        public DateTime PostDate { get; set; }
     }
 }

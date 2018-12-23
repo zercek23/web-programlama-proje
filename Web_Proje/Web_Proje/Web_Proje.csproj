@@ -200,21 +200,61 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Controllers\SiteBaseController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\UserRoleController.cs" />
     <Compile Include="DAL\PostContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812131929152_InitialCreate.cs" />
+    <Compile Include="Migrations\201812131929152_InitialCreate.Designer.cs">
+      <DependentUpon>201812131929152_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812231155451_tarih.cs" />
+    <Compile Include="Migrations\201812231155451_tarih.Designer.cs">
+      <DependentUpon>201812231155451_tarih.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetUserRoles.cs" />
     <Compile Include="Models\AspNetUsers.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Language.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="DAL\UserContext.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Home.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Home.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Home.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Layout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Layout.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Layout.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Post.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Post.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Post.en.resx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -308,6 +348,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\SiteBase\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -321,6 +362,44 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812131929152_InitialCreate.resx">
+      <DependentUpon>201812131929152_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812231155451_tarih.resx">
+      <DependentUpon>201812231155451_tarih.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Home.en.resx">
+      <CustomToolNamespace>dil</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Home.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Home.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>dil</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Layout.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Layout.en.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>dil</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Layout.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Layout.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>dil</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Post.en.resx">
+      <CustomToolNamespace>dil</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Post.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Post.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Post.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>dil</CustomToolNamespace>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

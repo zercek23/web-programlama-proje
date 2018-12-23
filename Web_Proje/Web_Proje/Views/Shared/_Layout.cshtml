@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
+    <title>@dil.Layout.Haberler</title>
     <!-- Custom stlylesheet -->
     <link type="text/css" rel="stylesheet" href="~/Content/Site.css" />
     <!-- Font Awesome Icon -->
@@ -23,12 +23,12 @@
                 <div class="container">
                     <!-- nav -->
                     <ul class="nav-menu nav navbar-nav">
-                        <li>@Html.ActionLink("HABERLER", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Gündem", "Index", "Home")</li>
-                        <li class="cat-1">@Html.ActionLink("Ekonomi", "Ekonomi", "Home")</li>
-                        <li class="cat-2">@Html.ActionLink("Spor", "Spor", "Home")</li>
-                        <li class="cat-3">@Html.ActionLink("Siyaset", "Siyaset", "Home")</li>
-                        <li class="cat-4">@Html.ActionLink("Magazin", "Magazin", "Home")</li>
+                        <li>@Html.ActionLink(dil.Layout.Haberler, "Index", "Home")</li>
+                        <li>@Html.ActionLink(dil.Layout.Gundem, "Index", "Home")</li>
+                        <li class="cat-1">@Html.ActionLink(dil.Layout.Ekonomi, "Ekonomi", "Home")</li>
+                        <li class="cat-2">@Html.ActionLink(dil.Layout.Spor, "Spor", "Home")</li>
+                        <li class="cat-3">@Html.ActionLink(dil.Layout.Siyaset, "Siyaset", "Home")</li>
+                        <li class="cat-4">@Html.ActionLink(dil.Layout.Magazin, "Magazin", "Home")</li>
                     </ul>
                     <!-- /nav -->
                     <!-- search & aside toggle -->
@@ -44,20 +44,22 @@
                 <!-- nav -->
                 <div class="section-row">
                     <ul class="nav-aside-menu">
-                        <li>@Html.ActionLink("Ana Sayfa", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Ekonomi", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Spor", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Siyaset", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Magazin", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Hakkımızda", "About", "Home")</li>
-                        <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
+                        <li>@Html.ActionLink(dil.Layout.Anasayfa, "Index", "Home")</li>
+                        <li>@Html.ActionLink(dil.Layout.Ekonomi, "Index", "Home")</li>
+                        <li>@Html.ActionLink(dil.Layout.Spor, "Index", "Home")</li>
+                        <li>@Html.ActionLink(dil.Layout.Siyaset, "Index", "Home")</li>
+                        <li>@Html.ActionLink(dil.Layout.Magazin, "Index", "Home")</li>
+                        <li>@Html.ActionLink(dil.Layout.Hakkimizda, "About", "Home")</li>
+                        <li>@Html.ActionLink(dil.Layout.Iletisim, "Contact", "Home")</li>
                         @Html.Partial("_LoginPartial")
+                        <li>@Html.ActionLink(dil.Layout.Turkce, "index", new { Language = "tr" })</li>
+                        <li>@Html.ActionLink(dil.Layout.English, "index", new { Language = "en" })</li>
                     </ul>
                 </div>
                 <!-- /nav -->
                 <!-- social links -->
                 <div class="section-row">
-                    <h3>Sosyal Medya</h3>
+                    <h3>@dil.Layout.SosyalMedya</h3>
                     <ul class="nav-aside-social">
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -90,15 +92,14 @@
                 <div class="col-md-5">
                     <div class="footer-widget">
                         <ul class="footer-nav">
-                            <li><a href="#">Gizlilik Politikası</a></li>
-                            <li><a href="#">Reklam</a></li>
+                            <li><a href="#">@dil.Layout.GizlilikPolitikasi</a></li>
+                            <li><a href="#">@dil.Layout.Reklam</a></li>
                         </ul>
                         <div class="footer-copyright">
                             <span>
-                                &copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                &copy;
                                 Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> Tüm hakları saklıdır. | Bu site BURAK BAYRAM tarafından hazırlanmıştır.
-                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                <script>document.write(new Date().getFullYear());</script> @dil.Layout.Hak. | @dil.Layout.Hazir.
                             </span>
                         </div>
                     </div>
@@ -111,12 +112,12 @@
                         </div>
                         <div class="col-md-8">
                             <div class="footer-widget">
-                                <h3 class="footer-title">Kategoriler</h3>
+                                <h3 class="footer-title">@dil.Layout.Kategoriler</h3>
                                 <ul class="footer-links">
-                                    <li>@Html.ActionLink("Ekonomi", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Spor", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Siyaset", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Magazin", "Index", "Home")</li>
+                                    <li>@Html.ActionLink(dil.Layout.Ekonomi, "Ekonomi", "Home")</li>
+                                    <li>@Html.ActionLink(dil.Layout.Spor, "Spor", "Home")</li>
+                                    <li>@Html.ActionLink(dil.Layout.Siyaset, "Siyaset", "Home")</li>
+                                    <li>@Html.ActionLink(dil.Layout.Magazin, "Magazin", "Home")</li>
                                 </ul>
                             </div>
                         </div>
@@ -125,7 +126,7 @@
 
                 <div class="col-md-3">
                     <div class="footer-widget">
-                        <h3 class="footer-title">Sosyal Medya</h3>
+                        <h3 class="footer-title">@dil.Layout.SosyalMedya</h3>
                         <ul class="footer-social">
                             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>

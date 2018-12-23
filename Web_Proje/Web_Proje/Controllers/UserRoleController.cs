@@ -10,7 +10,7 @@ using Web_Proje.Models;
 
 namespace Web_Proje.Controllers
 {
-    public class UserRoleController : Controller
+    public class UserRoleController : SiteBaseController
     {
         private UserContext db = new UserContext();
 

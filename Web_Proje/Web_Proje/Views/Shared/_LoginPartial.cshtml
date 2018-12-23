@@ -3,18 +3,18 @@
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-left">
-        <li>
-            @Html.ActionLink("Merhaba " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                @Html.ActionLink(dil.Layout.Merhaba + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">@dil.Layout.Cikis</a></li>
+        </ul>
     }
 }
 else
 {
-    <li>@Html.ActionLink("Üye ol", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-    <li>@Html.ActionLink("Giriş yap", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>  
+    <li>@Html.ActionLink(dil.Layout.Giris, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <li>@Html.ActionLink(dil.Layout.Uye, "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
 }

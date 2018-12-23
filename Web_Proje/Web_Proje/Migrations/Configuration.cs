@@ -10,6 +10,7 @@ namespace Web_Proje.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "Web_Proje.DAL.PostContext";
         }
 
         protected override void Seed(Web_Proje.DAL.PostContext context)

@@ -1,13 +1,10 @@
 ﻿@model IEnumerable<Web_Proje.Models.Post>
 
-@{
-    ViewBag.Title = "Magazin";
-}
 
 <div class="row">
     <div class="col-md-12">
         <div class="section-title">
-            <h2>Güncel Haberler</h2>
+            <h2>@dil.Home.GuncelHaberler</h2>
         </div>
     </div>
     @foreach (var item in Model)
@@ -23,6 +20,7 @@
                     <div class="post-body">
                         <div class="post-meta">
                             <a class="post-category">@Html.DisplayFor(modelItem => item.PostCategory)</a>
+                            <span style="padding-right:30px;" class="post-date navbar-right">@Html.DisplayFor(modelItem => item.PostDate.Day).@Html.DisplayFor(modelItem => item.PostDate.Month).@Html.DisplayFor(modelItem => item.PostDate.Year)</span>
                         </div>
                         <h3 class="post-title">@Html.ActionLink(item.PostHead, "Haberler", new { id = item.PostID })</h3>
                         <p class="group inner list-group-item-text" style="padding-top:3px;">

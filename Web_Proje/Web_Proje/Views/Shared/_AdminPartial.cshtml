@@ -5,11 +5,11 @@
     {
         @Html.AntiForgeryToken()
         
-<div class="container" style="text-align:center;">
-    @Html.ActionLink("Haberleri Listele", "Index", "Post") ||
-    @Html.ActionLink("Üyeleri Listele", "Index", "User") ||
-    @Html.ActionLink("Rolleri Listele", "Index", "UserRole")
-</div>
+        <div class="container" style="text-align:center;">
+            @Html.ActionLink(dil.Layout.HaberleriListele, "Index", "Post") ||
+            @Html.ActionLink(dil.Layout.UyeleriListele, "Index", "User") ||
+            @Html.ActionLink(dil.Layout.RolleriListele, "Index", "UserRole")
+        </div>
     }
 }
 else

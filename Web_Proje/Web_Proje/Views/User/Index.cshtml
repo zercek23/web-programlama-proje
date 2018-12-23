@@ -1,11 +1,6 @@
 ﻿@model IEnumerable<Web_Proje.Models.AspNetUsers>
 
-@{
-    ViewBag.Title = "Index";
-}
-
-
-<h2>Kullanıcı Listesi</h2>
+<h2>@dil.Post.KullaniciListesi</h2>
 
 <table class="table">
     <tr>
@@ -34,9 +29,9 @@
                 @Html.DisplayFor(modelItem => item.UserName)
             </td>
             <td>
-                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Ayrıntılar", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Sil", "Delete", new { id = item.Id })
+                @Html.ActionLink(dil.Post.Duzenle, "Edit", new { id = item.Id }) |
+                @Html.ActionLink(dil.Post.Ayrintilar, "Details", new { id = item.Id }) |
+                @Html.ActionLink(dil.Post.Sil, "Delete", new { id = item.Id })
             </td>
         </tr>
     }

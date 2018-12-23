@@ -1,13 +1,9 @@
 ﻿@model IEnumerable<Web_Proje.Models.Post>
 
-@{
-    ViewBag.Title = "Index";
-}
-
-<h3>Haberler</h3>
+<h3>@dil.Post.Haberler</h3>
 
 <p>
-    @Html.ActionLink("Yeni Haber Oluştur", "Create")
+    @Html.ActionLink(dil.Post.YeniHaber, "Create")
 </p>
 <table class="table">
     <tr>
@@ -25,6 +21,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostDate)
         </th>
         <th></th>
     </tr>
@@ -44,12 +43,17 @@
             @Html.DisplayFor(modelItem => item.PostContent)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Img)
+            <a class="post-img">
+                <img width="100px" height="100px" src="~/img/@Html.DisplayFor(modelItem => item.Img)" />
+            </a>
         </td>
         <td>
-            @Html.ActionLink("Düzenle", "Edit", new { id=item.PostID }) |
-            @Html.ActionLink("Ayrıntılar", "Details", new { id=item.PostID }) |
-            @Html.ActionLink("Sil", "Delete", new { id=item.PostID })
+            @Html.DisplayFor(modelItem => item.PostDate)
+        </td>
+        <td>
+            @Html.ActionLink(dil.Post.Duzenle, "Edit", new { id = item.PostID }) |
+            @Html.ActionLink(dil.Post.Ayrintilar, "Details", new { id = item.PostID }) |
+            @Html.ActionLink(dil.Post.Sil, "Delete", new { id = item.PostID })
         </td>
     </tr>
 }

@@ -12,7 +12,7 @@ using Web_Proje.Models;
 
 namespace Web_Proje.Controllers
 {
-    public class PostController : Controller
+    public class PostController : SiteBaseController
     {
         private PostContext db = new PostContext();
 
@@ -58,6 +58,9 @@ namespace Web_Proje.Controllers
             post.Img = image;
             var fotoYolu = Path.Combine(Server.MapPath("~/img"), image);
             img.SaveAs(fotoYolu);
+
+            post.PostDate = DateTime.Now;
+
             if (ModelState.IsValid)
             {
                 db.Post.Add(post);
@@ -89,8 +92,15 @@ namespace Web_Proje.Controllers
         [Authorize(Roles = "Admin,Editor")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PostID,PostHead,PostSubHead,PostCategory,PostContent,Img")] Post post)
+        public ActionResult Edit([Bind(Include = "PostID,PostHead,PostSubHead,PostCategory,PostContent,Img")] Post post, HttpPostedFileBase img)
         {
+            string image = img.FileName;
+            post.Img = image;
+            var fotoYolu = Path.Combine(Server.MapPath("~/img"), image);
+            img.SaveAs(fotoYolu);
+
+            post.PostDate = DateTime.Now;
+
             if (ModelState.IsValid)
             {
                 db.Entry(post).State = EntityState.Modified;

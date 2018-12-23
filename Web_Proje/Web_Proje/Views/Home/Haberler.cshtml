@@ -1,8 +1,5 @@
 ﻿@model Web_Proje.Models.Post
 
-@{
-    ViewBag.Title = "Haberler";
-}
 
 <div class="section">
     <div class="container">
@@ -28,10 +25,15 @@
                     <div class="main-post">
                         <div class="post-meta">
                             <a class="post-category">@Html.DisplayFor(model => model.PostCategory)</a>
-                            <span class="post-date">March 27, 2018</span>
+                            <span class="post-date">@Html.DisplayFor(model => model.PostDate.Day).@Html.DisplayFor(model => model.PostDate.Month).@Html.DisplayFor(model => model.PostDate.Year)</span>
                         </div>
                         <h3>@Html.DisplayFor(model => model.PostHead)</h3>
                         <p>@Html.DisplayFor(model => model.PostContent)</p>
+                    </div>
+                    <div class="post-shares sticky-shares">
+                        <a href="#" class="share-facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="share-twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="share-google-plus"><i class="fa fa-google-plus"></i></a>
                     </div>
                 </div>
 

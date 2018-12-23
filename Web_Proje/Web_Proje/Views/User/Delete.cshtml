@@ -1,12 +1,12 @@
 ﻿@model Web_Proje.Models.AspNetUsers
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Sil";
 }
 
-<h2>Kullanıcıyı Sil</h2>
+<h2>@dil.Post.Sil</h2>
 
-<h4>Bu kullanıcıyı silmek istediğinize emin misiniz?</h4>
+<h4>@dil.Post.KullaniciSil</h4>
 <div>
     <hr />
     <dl class="dl-horizontal">
@@ -104,8 +104,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Sil" class="btn btn-default" /> |
-            @Html.ActionLink("Listeye Geri Dön", "Index")
+            <input type="submit" value="@dil.Post.Sil" class="btn btn-default" /> |
+            @Html.ActionLink(dil.Post.Lgd, "Index")
         </div>
     }
 </div>

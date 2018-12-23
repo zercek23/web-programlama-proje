@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Web_Proje.Models.AspNetUserRoles>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Rol Tanımlama";
 }
 
-<h2>Rol Tanımlama</h2>
+<h2>@dil.Post.RolTanimlama</h2>
 
 <p>
-    @Html.ActionLink("Yeni Rol Tanımla", "Create")
+    @Html.ActionLink(dil.Post.YeniRol, "Create")
 </p>
 <table class="table">
     <tr>
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.RoleId)
         </td>
         <td>
-            @Html.ActionLink("Düzenle", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Ayrıntılar", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Sil", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink(dil.Post.Duzenle, "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink(dil.Post.Ayrintilar, "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink(dil.Post.Sil, "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }

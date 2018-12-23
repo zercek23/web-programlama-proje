@@ -9,7 +9,7 @@ using Web_Proje.Models;
 
 namespace Web_Proje.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : SiteBaseController
     {
         private PostContext db = new PostContext(); 
         public ActionResult Index()
@@ -60,6 +60,12 @@ namespace Web_Proje.Controllers
         public ActionResult Magazin()
         {
             return View(db.Post.ToList());
+        }
+        public ActionResult ChangeLanguage(string lang)
+        {
+            new SiteLanguage().SetLanguage(lang);
+            string controllerName = this.ControllerContext.RouteData.Values["controller"].ToString();
+            return RedirectToAction("Index", controllerName);
         }
     }
 }

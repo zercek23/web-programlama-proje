@@ -1,13 +1,9 @@
 ﻿@model Web_Proje.Models.AspNetUsers
 
-@{
-    ViewBag.Title = "Details";
-}
-
-<h2>Kullanıcı Bilgileri</h2>
+<h2>@dil.Post.KullaniciBilgileri</h2>
 
 <div>
-    <h4>Kullanıcı</h4>
+    <h4>@dil.Post.Kullanici</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -62,6 +58,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Listeye Geri Dön", "Index")
+    @Html.ActionLink(dil.Post.Duzenle, "Edit", new { id = Model.Id }) |
+    @Html.ActionLink(dil.Post.Lgd, "Index")
 </p>

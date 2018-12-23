@@ -1,12 +1,8 @@
 ﻿@model Web_Proje.Models.Post
 
-@{
-    ViewBag.Title = "Delete";
-}
+<h2>@dil.Post.Sil</h2>
 
-<h2>Sil</h2>
-
-<h3>Haberi silmek istediğinize emin misiniz?</h3>
+<h3>@dil.Post.Silmek</h3>
 <div>
     <h4>Haber</h4>
     <hr />
@@ -44,11 +40,21 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.PostDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostDate)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.Img)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Img)
+            <a class="post-img">
+                <img width="300px" height="300px" src="~/img/@Html.DisplayFor(model => model.Img)" />
+            </a>
         </dd>
 
     </dl>
@@ -57,8 +63,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Sil" class="btn btn-default" /> |
-            @Html.ActionLink("Listeye Geri Dön", "Index")
+            <input type="submit" value="@dil.Post.Sil" class="btn btn-default" /> |
+            @Html.ActionLink(dil.Post.Lgd, "Index")
         </div>
     }
 </div>
